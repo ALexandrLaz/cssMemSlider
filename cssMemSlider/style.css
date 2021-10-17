@@ -62,6 +62,8 @@ figcaption {
   width: 100%;
   background-color: greenyellow;
   opacity: 0.8;
+  text-align: center;
+  font-size: 2em;
 }
 
 #slide1:checked ~ .slider > .slide1,
@@ -96,22 +98,50 @@ figcaption {
 }
 
 .wrapper label:hover,
-#slide1:checked ~ .controls label:nth-of-type(1),
-#slide2:checked ~ .controls label:nth-of-type(2),
-#slide3:checked ~ .controls label:nth-of-type(3),
-#slide4:checked ~ .controls label:nth-of-type(4),
-#slide5:checked ~ .controls label:nth-of-type(5) {
+#slide1:checked ~ .controls label:nth-child(1),
+#slide2:checked ~ .controls label:nth-child(2),
+#slide3:checked ~ .controls label:nth-child(3),
+#slide4:checked ~ .controls label:nth-child(4),
+#slide5:checked ~ .controls label:nth-child(5) {
   background: greenyellow;
 }
 
 .wrapper label:after {
-  border: 2px solid greenyellow;
+  position: absolute;
+  left: -4px;
+  top: -4px;
   content: " ";
   display: block;
-  height: 12px;
-  left: -4px;
-  position: absolute;
-  top: -4px;
   width: 12px;
+  height: 12px;
+  border: 2px solid greenyellow;
   border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .slider {
+    width: 68%;
+    height: 70%;
+  }
+  figcaption {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 425px) {
+  .slider {
+    width: 90%;
+    height: 50%;
+  }
+  figcaption {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 320px) {
+  .slider {
+    width: 95%;
+    height: 40%;
+  }
+  figcaption {
+    font-size: 0.95em;
+  }
 }
